@@ -1,0 +1,115 @@
+
+@mixin default_box_shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@mixin default_block_shadow {
+    @include default_box_shadow;
+    background-color: white;
+    padding: .75em .75em;
+    display: flex;
+    border-radius: 3px;
+}
+
+@mixin default_block_shadow_hover {
+    @include default_block_shadow;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+    }
+}
+
+@mixin default_block_shadow_focus {
+    @include default_block_shadow;
+
+    &:focus {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+    }
+}
+
+@mixin flex_page {
+    @media (min-width: 992px) {
+        max-width: 972px;
+    }
+    @media (max-width: 992px) {
+        max-width: 100%;
+        padding-right: .2em;
+        padding-left: .2em;
+    }
+    @media (min-width: 1431px) {
+        max-width: 1024px;
+    }
+}
+
+@mixin flex_page__alt {
+    @media (min-width: 1431px) {
+        max-width: 1024px;
+    }
+}
+
+@mixin flex_page__big {
+    @media (min-width: 1431px) {
+        max-width: 1280px;
+    }
+}
+
+@mixin flex_page__thin {
+    @media (min-width: 480px) {
+        max-width: 480px;
+    }
+}
+
+@mixin for_desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin for_mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin inputs {
+    label {
+        font-weight: 600;
+        font-size: 1em;
+        margin-bottom: 2em;
+        cursor: pointer;
+        width: 100%;
+
+        >input, >textarea {
+            width: 100%;
+            display: block;
+        }
+    }
+    input, textarea {
+        padding: .4em 1em;
+        border: var(--best-border);
+        color: var(--text-dark);
+        outline: none;
+
+        -webkit-transition : border .3s ease-in-out;
+        -moz-transition : border .3s ease-in-out;
+        -o-transition : border .3s ease-in-out;
+        transition : border .3s ease-in-out;
+
+        &::placeholder,
+        &::-webkit-input-placeholder {
+            color: var(--grey);
+        }
+
+        &.error {
+            border-color: var(--red);
+        }
+        &.valid {
+            border-color: var(--green);
+        }
+    }
+    input:focus,
+    textarea:focus {
+        border-color: var(--blue-light);
+    }
+}

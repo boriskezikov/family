@@ -1,0 +1,50 @@
+.button {
+    color: $buttonText;
+    border-radius: $buttonRadius;
+    display: inline-block;
+    border: 0;
+    background-color: $buttonColor;
+    text-decoration: none;
+
+    padding: 0 25px;
+    font-size: 17px;
+    line-height: 54px;
+    height: 54px;
+
+    &.large {
+        padding: 0 34px;
+        font-size: 20px;
+        line-height: 70px;
+        height: 70px;
+    }
+
+    &.medium {
+        padding: 0 25px;
+        font-size: 17px;
+        line-height: 54px;
+        height: 54px;
+    }
+
+    &.small {
+        padding: 0 16px;
+        font-size: 14px;
+        line-height: 42px;
+        height: 42px;
+    }
+
+    &.outline {
+        background-color: $white;
+        color: #565656;
+        border: 1px solid #cdcfd1;
+
+        &:hover {
+            background-color: #f5f5f5;
+            border: 1px solid #cdcfd1;
+            color: #565656;
+        }
+    }
+
+    &:hover {
+        background-color: $buttonColorHover;
+    }
+}
