@@ -116,37 +116,12 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--  <build>-->
-    <!--    <plugins>-->
-    <!--      <plugin>-->
-    <!--        <groupId>org.springframework.boot</groupId>-->
-    <!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
-    <!--      </plugin>-->
-    <!--      <plugin>-->
-    <!--        <groupId>org.flywaydb</groupId>-->
-    <!--        <artifactId>flyway-maven-plugin</artifactId>-->
-    <!--        <version>6.5.5</version>-->
-    <!--        <configuration>-->
-    <!--          <user>postgres</user>-->
-    <!--          <password>admin</password>-->
-    <!--          <url>jdbc:postgresql://localhost:5432/postgres</url>-->
-    <!--        </configuration>-->
-    <!--      </plugin>-->
-    <!--      <plugin>-->
-    <!--        <groupId>org.apache.maven.plugins</groupId>-->
-    <!--        <artifactId>maven-compiler-plugin</artifactId>-->
-    <!--        <configuration>-->
-    <!--          <source>14</source>-->
-    <!--          <target>14</target>-->
-    <!--          <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-    <!--        </configuration>-->
-    <!--      </plugin>-->
-    <!--    </plugins>-->
-    <!--  </build>-->
-
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -176,7 +151,7 @@
             </build>
         </profile>
         <profile>
-            <id>default</id>
+            <id>dev</id>
             <build>
                 <plugins>
                     <plugin>
